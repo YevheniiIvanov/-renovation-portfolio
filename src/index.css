@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+
+  --color-surface: #f7f5f0;
+  --color-surface-elevated: #ffffff;
+  --color-ink: #14120f;
+  --color-ink-muted: #5c5850;
+  --color-accent: #b8956a;
+  --color-accent-hover: #a38258;
+  --color-border: rgba(20, 18, 15, 0.08);
+  --color-glass: rgba(255, 255, 255, 0.72);
+
+  --shadow-soft: 0 24px 80px -24px rgba(20, 18, 15, 0.18);
+  --shadow-card: 0 4px 24px rgba(20, 18, 15, 0.06);
+}
+
+.dark {
+  --color-surface: #0c0c0e;
+  --color-surface-elevated: #141416;
+  --color-ink: #f4f1ea;
+  --color-ink-muted: #a8a29a;
+  --color-accent: #d4b896;
+  --color-accent-hover: #e2c9a8;
+  --color-border: rgba(244, 241, 234, 0.08);
+  --color-glass: rgba(12, 12, 14, 0.75);
+  --shadow-soft: 0 32px 100px -32px rgba(0, 0, 0, 0.65);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-surface font-sans text-ink antialiased;
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    @apply bg-accent/25 text-ink;
+  }
+
+  .dark ::selection {
+    @apply bg-accent/30;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
