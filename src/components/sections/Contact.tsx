@@ -6,6 +6,14 @@ import { FadeIn } from '../ui/FadeIn'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Button } from '../ui/Button'
 
+function contactApiUrl(): string {
+  const explicit = import.meta.env.VITE_CONTACT_API?.trim()
+  if (explicit) return explicit
+  const base = import.meta.env.BASE_URL
+  const path = `${base.replace(/\/?$/, '')}/api/contact`
+  return path.replace(/([^:]\/)\/+/g, '$1')
+}
+
 export function Contact() {
   const { openPrivacyPolicy } = usePrivacyPolicy()
   const [status, setStatus] = useState<'idle' | 'loading' | 'ok' | 'err'>(
@@ -33,7 +41,7 @@ export function Contact() {
       return
     }
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(contactApiUrl(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
@@ -87,7 +95,7 @@ export function Contact() {
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-6">
                   <div className="shrink-0 overflow-hidden rounded-xl border border-ink/10 bg-white p-2 shadow-inner dark:border-white/10">
                     <img
-                      src="/favicon.png"
+                      src={`${import.meta.env.BASE_URL}favicon.png`}
                       alt=""
                       className="h-20 w-20 object-contain sm:h-24 sm:w-24"
                       width={96}
@@ -96,7 +104,7 @@ export function Contact() {
                         const el = e.currentTarget
                         if (el.src.endsWith('.svg')) return
                         el.onerror = null
-                        el.src = '/favicon.svg'
+                        el.src = `${import.meta.env.BASE_URL}favicon.svg`
                       }}
                     />
                   </div>

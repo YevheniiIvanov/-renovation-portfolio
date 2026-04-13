@@ -28,7 +28,7 @@ export function Footer() {
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
             <div className="shrink-0 overflow-hidden rounded-2xl border border-white/15 bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
               <img
-                src="/favicon.png"
+                src={`${import.meta.env.BASE_URL}favicon.png`}
                 alt=""
                 className="mx-auto h-28 w-28 object-contain md:h-32 md:w-32"
                 width={128}
@@ -37,7 +37,7 @@ export function Footer() {
                   const el = e.currentTarget
                   if (el.src.endsWith('.svg')) return
                   el.onerror = null
-                  el.src = '/favicon.svg'
+                  el.src = `${import.meta.env.BASE_URL}favicon.svg`
                 }}
               />
             </div>

@@ -1,10 +1,28 @@
 import 'dotenv/config'
+import { existsSync } from 'fs'
 import cors from 'cors'
 import express from 'express'
+import { dirname, join } from 'path'
+import { fileURLToPath } from 'url'
 import { Resend } from 'resend'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const distPath = join(__dirname, '..', 'dist')
+/** Hosting (Railway, Render, Docker) często nie ustawia NODE_ENV — te zmienne sygnalizują produkcję. */
+const isProductionDeploy =
+  process.env.NODE_ENV === 'production' ||
+  Boolean(process.env.RAILWAY_ENVIRONMENT) ||
+  process.env.RENDER === 'true'
+const serveStatic =
+  existsSync(join(distPath, 'index.html')) &&
+  (isProductionDeploy || process.env.SERVE_STATIC === '1')
 
 const app = express()
 const PORT = process.env.PORT || 3001
+
+if (isProductionDeploy) {
+  app.set('trust proxy', 1)
+}
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY?.trim()
 const CONTACT_TO_EMAIL =
@@ -136,8 +154,20 @@ app.get('/api/health', (_req, res) => {
   res.json({ ok: true })
 })
 
+if (serveStatic) {
+  app.use(express.static(distPath))
+  app.use((req, res, next) => {
+    if (req.method !== 'GET' && req.method !== 'HEAD') return next()
+    if (req.path.startsWith('/api')) return next()
+    res.sendFile(join(distPath, 'index.html'), (err) => {
+      if (err) next(err)
+    })
+  })
+}
+
 app.listen(PORT, () => {
-  console.log(`Contact API listening on http://localhost:${PORT}`)
+  const mode = serveStatic ? ' + static (dist)' : ''
+  console.log(`Server listening on http://localhost:${PORT}${mode}`)
   if (!RESEND_API_KEY) {
     console.warn(
       '[contact] Brak RESEND_API_KEY — ustaw klucz w pliku .env (patrz .env.example).',

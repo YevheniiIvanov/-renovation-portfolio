@@ -100,7 +100,7 @@ export function Header() {
             }`}
           >
             <img
-              src="/favicon.png"
+              src={`${import.meta.env.BASE_URL}favicon.png`}
               alt=""
               width={36}
               height={36}
@@ -109,7 +109,7 @@ export function Header() {
                 const el = e.currentTarget
                 if (el.src.endsWith('.svg')) return
                 el.onerror = null
-                el.src = '/favicon.svg'
+                el.src = `${import.meta.env.BASE_URL}favicon.svg`
               }}
             />
           </div>
