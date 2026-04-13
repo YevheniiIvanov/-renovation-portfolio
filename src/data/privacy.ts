@@ -7,7 +7,7 @@ import { site } from './content'
 export function getPrivacyPolicyHtml(): string {
   return `
 <h3 class="font-display text-xl font-medium text-ink">1. Administrator danych</h3>
-<p>Administratorem Państwa danych osobowych jest: <strong>${escapeHtml(site.administrator)}</strong>, adres: ${escapeHtml(site.address)}, e-mail: <a class="underline decoration-accent/80 hover:text-accent" href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a>${site.nip ? `, NIP: ${escapeHtml(site.nip)}` : ''}.</p>
+<p>Administratorem Państwa danych osobowych jest: <strong>${escapeHtml(site.administrator)}</strong>, adres: ${escapeHtml(site.address)}, e-mail: <a class="underline decoration-accent/80 hover:text-accent" href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a>${site.nip ? `, NIP: ${escapeHtml(site.nip)}` : ''}${site.regon ? `, REGON: ${escapeHtml(site.regon)}` : ''}.</p>
 
 <h3 class="font-display text-xl font-medium text-ink mt-8">2. Inspektor ochrony danych</h3>
 <p>Administrator nie powołał inspektora ochrony danych. W sprawach dotyczących danych osobowych prosimy o kontakt na adres e-mail wskazany powyżej.</p>

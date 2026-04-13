@@ -1,11 +1,13 @@
-import { Loader2, Send } from 'lucide-react'
+import { Building2, Loader2, Mail, Phone, Send } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { site } from '../../data/content'
+import { usePrivacyPolicy } from '../../context/PrivacyPolicyContext'
 import { FadeIn } from '../ui/FadeIn'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Button } from '../ui/Button'
 
 export function Contact() {
+  const { openPrivacyPolicy } = usePrivacyPolicy()
   const [status, setStatus] = useState<'idle' | 'loading' | 'ok' | 'err'>(
     'idle',
   )
@@ -67,14 +69,47 @@ export function Contact() {
               align="left"
             />
             <FadeIn className="mt-10 space-y-6">
+              <div className="overflow-hidden rounded-2xl border border-ink/10 bg-gradient-to-br from-surface-elevated via-surface-elevated to-ink/[0.03] p-6 shadow-soft dark:border-white/10 dark:from-ink/50 dark:via-ink/40 dark:to-accent/[0.06]">
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-6">
+                  <div className="shrink-0 overflow-hidden rounded-xl border border-ink/10 bg-white p-1.5 shadow-inner dark:border-white/10">
+                    <img
+                      src="/logo-ddbud.png"
+                      alt=""
+                      className="h-auto max-h-20 w-auto max-w-[140px] object-contain"
+                      width={140}
+                      height={84}
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent">
+                      {site.serviceLine}
+                    </p>
+                    <p className="mt-1 font-display text-xl font-medium tracking-tight text-ink md:text-2xl">
+                      {site.nameFull}
+                    </p>
+                    <p className="mt-0.5 text-sm text-ink-muted">{site.owner}</p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center gap-1.5 rounded-lg border border-ink/10 bg-surface/80 px-2.5 py-1 font-mono text-[11px] text-ink-muted dark:border-white/10 dark:bg-ink/30">
+                        <Building2 className="h-3 w-3 text-accent" aria-hidden />
+                        NIP {site.nip}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-lg border border-ink/10 bg-surface/80 px-2.5 py-1 font-mono text-[11px] text-ink-muted dark:border-white/10 dark:bg-ink/30">
+                        REGON {site.regon}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-ink-muted">
                   Telefon
                 </p>
                 <a
-                  className="mt-1 block text-lg font-medium text-ink hover:text-accent"
+                  className="mt-2 inline-flex items-center gap-2 text-lg font-medium text-ink transition hover:text-accent"
                   href={phoneHref}
                 >
+                  <Phone className="h-5 w-5 text-accent" strokeWidth={1.75} />
                   {site.phone}
                 </a>
               </div>
@@ -83,9 +118,10 @@ export function Contact() {
                   E-mail
                 </p>
                 <a
-                  className="mt-1 block text-lg font-medium text-ink hover:text-accent"
+                  className="mt-2 inline-flex items-center gap-2 break-all text-lg font-medium text-ink transition hover:text-accent"
                   href={`mailto:${site.email}`}
                 >
+                  <Mail className="h-5 w-5 shrink-0 text-accent" strokeWidth={1.75} />
                   {site.email}
                 </a>
               </div>
@@ -188,13 +224,18 @@ export function Contact() {
                     <span>
                       Wyrażam zgodę na przetwarzanie moich danych osobowych
                       podanych w formularzu w celu udzielenia odpowiedzi na
-                      zapytanie. Zapoznałem(-am) się z{' '}
-                      <a
-                        href="#privacy"
-                        className="font-medium text-accent underline decoration-accent/60 underline-offset-2"
+                      zapytanie.                       Zapoznałem(-am) się z{' '}
+                      <button
+                        type="button"
+                        className="cursor-pointer border-0 bg-transparent p-0 font-medium text-accent underline decoration-accent/60 underline-offset-2"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          e.stopPropagation()
+                          openPrivacyPolicy()
+                        }}
                       >
                         polityką prywatności
-                      </a>{' '}
+                      </button>{' '}
                       i informacją o przetwarzaniu danych.
                     </span>
                   </label>

@@ -1,16 +1,28 @@
-/** Dane firmy — uzupełnij przed publikacją (RODO, stopka). */
+/** Dane firmy — RODO, stopka, kontakt. */
 export const site = {
-  name: 'Atelier Haus',
+  /** Krótka nazwa w menu (np. logo tekstowe) */
+  name: 'DD BUD',
+  /** Pełna nazwa handlowa */
+  nameFull: 'DD BUD Wykończenia',
+  /** Linia jak na wizytówce */
+  serviceLine: 'Usługi remontowo wykończeniowe',
+  /** Krótki dopisek w nagłówku */
+  serviceLineShort: 'Remonty · Wykończenia',
   tagline: 'Precyzja. Jakość. Nowoczesne życie.',
-  /** Krótka nazwa administratora danych (np. firma lub imię i nazwisko przedsiębiorcy) */
-  administrator: 'Atelier Haus — Jan Kowalski',
-  /** Pełny adres do polityki prywatności i stopki */
-  address: '00-001 Warszawa, ul. Przykładowa 1',
-  phone: '+48 600 000 000',
-  email: 'kontakt@atelierhaus.pl',
+  /** Właściciel / osoba reprezentująca */
+  owner: 'Dmytro Dovhopolyk',
+  /** Administrator danych (RODO) */
+  administrator: 'DD BUD Wykończenia — Dmytro Dovhopolyk',
+  /**
+   * Adres korespondencyjny — uzupełnij pełny, jeśli ma być w polityce i stopce.
+   * Na wizytówce nie było adresu — wpisano kraj; zaktualizuj po ustaleniu.
+   */
+  address: 'Polska',
+  phone: '+48 666 698 053',
+  email: 'wykonczenia.ddbud@gmail.com',
   city: 'Obsługa: Warszawa i okolice',
-  /** NIP — opcjonalnie, do wyświetlenia w polityce */
-  nip: '0000000000',
+  nip: '5732963686',
+  regon: '542063759',
 }
 
 export const services = [
@@ -133,22 +145,22 @@ export const testimonials = [
   {
     id: 't1',
     quote:
-      'Ekipa zabezpieczyła podłogi i skończyła terminowo. Łazienka jak w hotelu.',
-    name: 'Elena M.',
+      'Podłogi zabezpieczone od pierwszego dnia, roboty domknięte w umówionym terminie. Łazienka wyszła jak z katalogu — jestem bardzo zadowolona.',
+    name: 'Magdalena W.',
     role: 'Właścicielka mieszkania',
   },
   {
     id: 't2',
     quote:
-      'Spokojne rzemiosło — narożniki, fugi i przejścia są bez zarzutu.',
-    name: 'Jordan K.',
+      'Spokojna, rzetelna robota: narożniki, fugi i przejścia między materiałami — wszystko dopracowane, bez fuszerki.',
+    name: 'Marek T.',
     role: 'Właściciel domu',
   },
   {
     id: 't3',
     quote:
-      'Jasne oferty, bez niespodzianek — wszystko uzgodnione ze wspólnotą.',
-    name: 'Priya S.',
+      'Jasna wycena, bez dopłat „pod koniec”. Uzgodniliśmy zakres z zarządem wspólnoty i poszło sprawnie.',
+    name: 'Katarzyna Z.',
     role: 'Członkini zarządu wspólnoty',
   },
 ]

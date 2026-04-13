@@ -1,4 +1,9 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from 'framer-motion'
 import { Menu, Moon, Sun } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { navLinks, site } from '../../data/content'
@@ -37,6 +42,16 @@ export function Header() {
   )
 
   const [mobileOpen, setMobileOpen] = useState(false)
+  /** Nad ciemnym Hero (tryb jasny) nagłówek musi mieć jasny tekst — po scrollu wraca do ink. */
+  const [headerSolid, setHeaderSolid] = useState(false)
+  useMotionValueEvent(scrollY, 'change', (v) => {
+    setHeaderSolid(v > 56)
+  })
+
+  useEffect(() => {
+    setHeaderSolid(window.scrollY > 56)
+  }, [])
+
   useEffect(() => {
     if (!mobileOpen) return
     const onResize = () => {
@@ -45,6 +60,15 @@ export function Header() {
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
   }, [mobileOpen])
+
+  const onHero =
+    theme === 'light' && !headerSolid
+  const heroLink = onHero
+    ? 'text-white [text-shadow:_0_1px_3px_rgba(0,0,0,0.55)]'
+    : 'text-ink'
+  const heroMuted = onHero
+    ? 'text-white/85 [text-shadow:_0_1px_2px_rgba(0,0,0,0.45)]'
+    : 'text-ink-muted'
 
   return (
     <motion.header
@@ -61,17 +85,21 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 md:px-8">
         <a
           href="#top"
-          className="group flex items-baseline gap-2"
+          className="group flex items-baseline gap-2.5"
           onClick={(e) => {
             e.preventDefault()
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
-          <span className="font-display text-xl font-semibold tracking-tight text-ink md:text-2xl">
+          <span
+            className={`font-display text-xl font-semibold tracking-tight md:text-2xl transition-colors duration-300 ${heroLink}`}
+          >
             {site.name}
           </span>
-          <span className="hidden text-[10px] font-medium uppercase tracking-[0.25em] text-ink-muted sm:inline">
-            Pracownia
+          <span
+            className={`hidden text-[10px] font-medium uppercase tracking-[0.2em] transition-colors duration-300 sm:inline ${heroMuted}`}
+          >
+            {site.serviceLineShort}
           </span>
         </a>
 
@@ -83,7 +111,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-ink-muted transition-colors hover:text-ink"
+              className={`text-sm font-medium transition-colors duration-300 ${heroMuted} ${onHero ? 'hover:text-white' : 'hover:text-ink'}`}
               onClick={(e) => {
                 e.preventDefault()
                 scrollTo(link.href)
@@ -98,7 +126,7 @@ export function Header() {
           <button
             type="button"
             onClick={toggle}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/10 text-ink transition hover:border-accent hover:text-accent dark:border-white/10"
+            className={`flex h-10 w-10 items-center justify-center rounded-full border text-ink transition hover:border-accent hover:text-accent dark:border-white/10 ${onHero ? 'border-white/35 text-white hover:text-accent' : 'border-ink/10'}`}
             aria-label={
               theme === 'dark'
                 ? 'Przełącz na jasny motyw'
@@ -122,7 +150,7 @@ export function Header() {
 
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/10 md:hidden dark:border-white/10"
+            className={`flex h-10 w-10 items-center justify-center rounded-full border md:hidden dark:border-white/10 ${onHero ? 'border-white/35 text-white' : 'border-ink/10 text-ink'}`}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             aria-label={mobileOpen ? 'Zamknij menu' : 'Otwórz menu'}

@@ -7,7 +7,8 @@ import {
 } from 'react'
 import { ThemeContext, type Theme } from './theme-context'
 
-const STORAGE_KEY = 'atelier-theme'
+const STORAGE_KEY = 'ddbud-theme'
+const LEGACY_STORAGE_KEY = 'atelier-theme'
 
 function getSystemTheme(): Theme {
   if (typeof window === 'undefined') return 'light'
@@ -18,7 +19,9 @@ function getSystemTheme(): Theme {
 
 function readStoredTheme(): Theme | null {
   try {
-    const v = localStorage.getItem(STORAGE_KEY)
+    const v =
+      localStorage.getItem(STORAGE_KEY) ??
+      localStorage.getItem(LEGACY_STORAGE_KEY)
     if (v === 'light' || v === 'dark') return v
   } catch {
     /* ignore */
