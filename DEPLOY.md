@@ -53,4 +53,16 @@ Vercel opiera się o **funkcje serverless**; ten projekt ma **długo działając
 
 ## GitHub Pages
 
-Nadal możesz publikować sam front (workflow w `.github/workflows/`). Wtedy backend musi być gdzie indziej i ustawiasz **`VITE_CONTACT_API`** w zmiennych Actions.
+Publikuje **tylko front** z `npm run build` (bez Node API). Formularz działa dopiero po ustawieniu **`VITE_CONTACT_API`** albo osobnym backendzie.
+
+### Checklist (raz na repo)
+
+1. **Settings → Pages → Build and deployment → Source:** **GitHub Actions** (nie „Deploy from a branch”).
+2. **Settings → Actions → General → Workflow permissions:** **Read and write** (wymagane do wdrożenia artefaktu na Pages).
+3. Wypchnij kod na **`main`** lub **`master`** — workflow `.github/workflows/deploy-pages.yml` uruchomi się sam.  
+   Albo **Actions → Deploy to GitHub Pages → Run workflow** (ręczny start).
+4. Po zielonym jobie: **Settings → Pages** — na górze pojawi się link **`https://TWOJ_LOGIN.github.io/NAZWA_REPO/`**.
+
+### Opcjonalnie: formularz z github.io
+
+**Settings → Secrets and variables → Actions → Variables** → dodaj **`VITE_CONTACT_API`** = pełny adres do backendu, np. `https://twoj-api.up.railway.app/api/contact`, potem ponownie uruchom workflow (push lub Run workflow). Na backendzie dopisz **`CORS_ORIGINS`** z adresem strony na `github.io`.
