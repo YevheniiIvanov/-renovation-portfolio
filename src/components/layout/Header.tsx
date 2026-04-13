@@ -85,21 +85,46 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 md:px-8">
         <a
           href="#top"
-          className="group flex items-baseline gap-2.5"
+          className="group flex min-w-0 items-center gap-2.5 md:gap-3"
           onClick={(e) => {
             e.preventDefault()
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
-          <span
-            className={`font-display text-xl font-semibold tracking-tight md:text-2xl transition-colors duration-300 ${heroLink}`}
+          {/* Ten sam „kafelek” co przy kontakcie — białe tło, żeby znak był czytelny na hero i po scrollu */}
+          <div
+            className={`shrink-0 rounded-lg border p-1.5 shadow-sm transition-shadow duration-300 md:rounded-xl md:p-2 ${
+              onHero
+                ? 'border-white/50 bg-white shadow-[0_4px_18px_rgba(0,0,0,0.22)]'
+                : 'border-ink/12 bg-white shadow-card dark:border-white/12 dark:bg-white'
+            }`}
           >
-            {site.name}
-          </span>
-          <span
-            className={`hidden text-[10px] font-medium uppercase tracking-[0.2em] transition-colors duration-300 sm:inline ${heroMuted}`}
-          >
-            {site.serviceLineShort}
+            <img
+              src="/favicon.png"
+              alt=""
+              width={36}
+              height={36}
+              className="h-9 w-9 object-contain md:h-10 md:w-10"
+              onError={(e) => {
+                const el = e.currentTarget
+                if (el.src.endsWith('.svg')) return
+                el.onerror = null
+                el.src = '/favicon.svg'
+              }}
+            />
+          </div>
+          <span className="flex min-w-0 flex-col gap-1 leading-tight">
+            <span
+              className={`font-display text-[1.05rem] font-medium tracking-tight transition-colors duration-300 sm:text-xl md:text-2xl ${heroLink}`}
+            >
+              <span className="sm:hidden">{site.name}</span>
+              <span className="hidden sm:inline">{site.nameFull}</span>
+            </span>
+            <span
+              className={`text-[9px] font-semibold uppercase tracking-[0.22em] transition-colors duration-300 sm:text-[10px] ${onHero ? 'text-white/80 [text-shadow:_0_1px_2px_rgba(0,0,0,0.45)]' : 'text-accent'}`}
+            >
+              {site.serviceLineShort}
+            </span>
           </span>
         </a>
 

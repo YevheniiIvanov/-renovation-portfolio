@@ -26,13 +26,19 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
-            <div className="shrink-0 overflow-hidden rounded-2xl border border-white/15 bg-white p-2 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
+            <div className="shrink-0 overflow-hidden rounded-2xl border border-white/15 bg-white p-3 shadow-[0_20px_50px_rgba(0,0,0,0.35)]">
               <img
-                src="/logo-ddbud.png"
+                src="/favicon.png"
                 alt=""
-                className="mx-auto h-auto max-h-[7.5rem] w-auto max-w-[200px] object-contain"
-                width={200}
-                height={120}
+                className="mx-auto h-28 w-28 object-contain md:h-32 md:w-32"
+                width={128}
+                height={128}
+                onError={(e) => {
+                  const el = e.currentTarget
+                  if (el.src.endsWith('.svg')) return
+                  el.onerror = null
+                  el.src = '/favicon.svg'
+                }}
               />
             </div>
             <div className="min-w-0 flex-1">

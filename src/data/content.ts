@@ -13,14 +13,17 @@ export const site = {
   owner: 'Dmytro Dovhopolyk',
   /** Administrator danych (RODO) */
   administrator: 'DD BUD Wykończenia — Dmytro Dovhopolyk',
+  /** Adres do mapy, stopki i polityki prywatności */
+  address: 'ul. Świętej Barbary 69/1, 42-226 Częstochowa',
   /**
-   * Adres korespondencyjny — uzupełnij pełny, jeśli ma być w polityce i stopce.
-   * Na wizytówce nie było adresu — wpisano kraj; zaktualizuj po ustaleniu.
+   * Punkt na mapie OSM (marker) — Nominatim dla „69, Świętej Barbary”, Częstochowa
+   * (dzielnica Podjasnogórska, 42-226).
    */
-  address: 'Polska',
+  mapLat: 50.8039964,
+  mapLon: 19.0919705,
   phone: '+48 666 698 053',
   email: 'wykonczenia.ddbud@gmail.com',
-  city: 'Obsługa: Warszawa i okolice',
+  city: 'Obsługa: Częstochowa i okolice',
   nip: '5732963686',
   regon: '542063759',
 }
