@@ -12,6 +12,7 @@
   --color-ink-muted: #5c5850;
   --color-accent: #b8956a;
   --color-accent-hover: #a38258;
+  --color-accent-foreground: #14120f;
   --color-border: rgba(20, 18, 15, 0.08);
   --color-glass: rgba(255, 255, 255, 0.72);
 
@@ -26,6 +27,7 @@
   --color-ink-muted: #a8a29a;
   --color-accent: #d4b896;
   --color-accent-hover: #e2c9a8;
+  --color-accent-foreground: #14120f;
   --color-border: rgba(244, 241, 234, 0.08);
   --color-glass: rgba(12, 12, 14, 0.75);
   --shadow-soft: 0 32px 100px -32px rgba(0, 0, 0, 0.65);

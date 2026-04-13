@@ -46,16 +46,16 @@ export function Hero() {
       >
         <div className="max-w-3xl">
           <motion.p
-            className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-accent"
+            className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-accent [text-shadow:_0_1px_12px_rgba(0,0,0,0.45)]"
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            Wykonawstwo remontowo-budowlane
+            {site.serviceLine}
           </motion.p>
           <motion.h1
             id="hero-heading"
-            className="font-display text-[clamp(2.5rem,6vw,4.25rem)] font-medium leading-[1.05] tracking-tight text-surface text-balance"
+            className="font-display text-[clamp(2.5rem,6vw,4.25rem)] font-medium leading-[1.05] tracking-tight text-balance text-white [text-shadow:_0_2px_28px_rgba(0,0,0,0.55)]"
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.2 }}
@@ -79,7 +79,7 @@ export function Hero() {
           >
             <Button
               variant="primary"
-              className="bg-accent text-ink hover:bg-accent-hover dark:bg-accent dark:text-ink"
+              className="border border-white/45 bg-accent text-ink shadow-sm hover:bg-accent-hover dark:border-white/50 dark:bg-accent dark:text-ink"
               onClick={() =>
                 document
                   .getElementById('contact')
@@ -90,7 +90,7 @@ export function Hero() {
             </Button>
             <Button
               variant="outline"
-              className="border-white/35 text-surface hover:border-accent hover:text-accent"
+              className="!border-white/55 !bg-white/5 !text-white backdrop-blur-[2px] hover:!border-white hover:!bg-white/15 hover:!text-white"
               onClick={() =>
                 document
                   .getElementById('portfolio')

@@ -1,0 +1,16 @@
+# Render Blueprint — utwórz Web Service z tego repozytorium; Resend dodaj w panelu (sync: false).
+services:
+  - type: web
+    name: single-page-portfolio
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: RESEND_API_KEY
+        sync: false
+      - key: CONTACT_TO_EMAIL
+        sync: false
+      - key: CONTACT_FROM_EMAIL
+        sync: false
