@@ -172,7 +172,7 @@ export function Contact() {
           <FadeIn delay={0.1}>
             <form
               onSubmit={onSubmit}
-              className="rounded-2xl border border-ink/8 bg-surface-elevated p-8 shadow-soft dark:border-white/12 dark:bg-gradient-to-b dark:from-[#151d2b] dark:to-[#0c1118] dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)_inset,0_24px_48px_-24px_rgba(0,0,0,0.5)] md:p-10"
+              className="rounded-2xl border border-ink/8 bg-surface-elevated p-8 shadow-soft dark:border-white/12 dark:bg-gradient-to-b dark:from-[#0f2038] dark:to-[#060d16] dark:shadow-[0_1px_0_0_rgba(255,255,255,0.06)_inset,0_24px_48px_-24px_rgba(0,0,0,0.5)] md:p-10"
               noValidate
             >
               <div className="space-y-6">
@@ -188,7 +188,7 @@ export function Contact() {
                     name="name"
                     required
                     autoComplete="name"
-                    className="mt-2 w-full rounded-xl border border-ink/12 bg-surface px-4 py-3 text-ink placeholder:text-ink-muted/80 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 dark:border-white/15 dark:bg-[#1e2633] dark:placeholder:text-[#a8b4c4]"
+                    className="mt-2 w-full rounded-xl border border-ink/12 bg-surface px-4 py-3 text-ink placeholder:text-ink-muted/80 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 dark:border-white/15 dark:bg-[#152238] dark:placeholder:text-[#a5b4cc]"
                     placeholder="Jan Kowalski"
                   />
                 </div>
@@ -206,7 +206,7 @@ export function Contact() {
                       type="email"
                       required
                       autoComplete="email"
-                      className="mt-2 w-full rounded-xl border border-ink/12 bg-surface px-4 py-3 text-ink placeholder:text-ink-muted/80 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 dark:border-white/15 dark:bg-[#1e2633] dark:placeholder:text-[#a8b4c4]"
+                      className="mt-2 w-full rounded-xl border border-ink/12 bg-surface px-4 py-3 text-ink placeholder:text-ink-muted/80 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 dark:border-white/15 dark:bg-[#152238] dark:placeholder:text-[#a5b4cc]"
                       placeholder="jan@example.pl"
                     />
                   </div>
@@ -222,7 +222,7 @@ export function Contact() {
                       name="phone"
                       type="tel"
                       autoComplete="tel"
-                      className="mt-2 w-full rounded-xl border border-ink/12 bg-surface px-4 py-3 text-ink placeholder:text-ink-muted/80 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 dark:border-white/15 dark:bg-[#1e2633] dark:placeholder:text-[#a8b4c4]"
+                      className="mt-2 w-full rounded-xl border border-ink/12 bg-surface px-4 py-3 text-ink placeholder:text-ink-muted/80 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 dark:border-white/15 dark:bg-[#152238] dark:placeholder:text-[#a5b4cc]"
                       placeholder="Opcjonalnie"
                     />
                   </div>
@@ -239,7 +239,7 @@ export function Contact() {
                     name="message"
                     required
                     rows={5}
-                    className="mt-2 w-full resize-y rounded-xl border border-ink/12 bg-surface px-4 py-3 text-ink placeholder:text-ink-muted/80 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 dark:border-white/15 dark:bg-[#1e2633] dark:placeholder:text-[#a8b4c4]"
+                    className="mt-2 w-full resize-y rounded-xl border border-ink/12 bg-surface px-4 py-3 text-ink placeholder:text-ink-muted/80 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25 dark:border-white/15 dark:bg-[#152238] dark:placeholder:text-[#a5b4cc]"
                     placeholder="Zakres prac, typ budynku / mieszkania, preferowany termin startu."
                   />
                 </div>
