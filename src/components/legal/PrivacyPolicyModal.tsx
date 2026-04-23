@@ -60,7 +60,7 @@ export function PrivacyPolicyModal({ open, onClose }: PrivacyPolicyModalProps) {
         </div>
         <div className="min-h-0 flex-1 overflow-y-auto px-5 py-4">
           <div
-            className="max-w-none space-y-4 text-sm leading-relaxed text-ink-muted [&_a]:text-accent [&_code]:text-xs [&_h3]:mt-6 [&_h3]:scroll-mt-4 [&_h3]:first:mt-0 [&_li]:marker:text-accent [&_ul]:space-y-2"
+            className="max-w-none space-y-4 text-sm leading-relaxed text-ink-muted [&_a]:text-accent-deep [&_a]:dark:text-accent [&_code]:text-xs [&_h3]:mt-6 [&_h3]:scroll-mt-4 [&_h3]:first:mt-0 [&_li]:marker:text-accent-deep dark:[&_li]:marker:text-accent [&_ul]:space-y-2"
             dangerouslySetInnerHTML={{ __html: privacyHtml }}
           />
           <p className="mt-6 text-xs text-ink-muted/90">

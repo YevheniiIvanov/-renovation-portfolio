@@ -54,7 +54,7 @@ export function CookieBar() {
             formularz, podajesz dane zgodnie z{' '}
             <button
               type="button"
-              className="font-medium text-accent underline decoration-accent/60 underline-offset-2 hover:text-accent/90"
+              className="font-medium text-accent-deep underline decoration-accent/60 underline-offset-2 hover:text-accent/90 dark:text-accent"
               onClick={openPrivacyPolicy}
             >
               polityką prywatności

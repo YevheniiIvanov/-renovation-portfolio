@@ -104,7 +104,7 @@ export function Header() {
               alt=""
               width={36}
               height={36}
-              className="h-9 w-9 object-contain md:h-10 md:w-10"
+              className="logo-mark h-9 w-9 object-contain md:h-10 md:w-10"
               onError={(e) => {
                 const el = e.currentTarget
                 if (el.src.endsWith('.svg')) return
@@ -121,7 +121,7 @@ export function Header() {
               <span className="hidden sm:inline">{site.nameFull}</span>
             </span>
             <span
-              className={`text-[9px] font-semibold uppercase tracking-[0.22em] transition-colors duration-300 sm:text-[10px] ${onHero ? 'text-white/80 [text-shadow:_0_1px_2px_rgba(0,0,0,0.45)]' : 'text-accent'}`}
+              className={`text-[9px] font-semibold uppercase tracking-[0.22em] transition-colors duration-300 sm:text-[10px] ${onHero ? 'text-white/80 [text-shadow:_0_1px_2px_rgba(0,0,0,0.45)]' : 'text-accent-deep dark:text-accent'}`}
             >
               {site.serviceLineShort}
             </span>

@@ -12,6 +12,8 @@
   --color-ink: #0a192f;
   --color-ink-muted: #56657a;
   --color-accent: #4b00e2;
+  /* Ten sam odcień co accent, ale ciemniejszy — małe caps / eyebrow na jasnym tle */
+  --color-accent-deep: #340094;
   --color-accent-hover: #5c12f5;
   --color-accent-foreground: #ffffff;
   /* Granat „z lewej” — stały na przyciski primary w obu motywach */
@@ -37,6 +39,17 @@
   --color-glass: rgba(6, 13, 22, 0.85);
   --shadow-soft: 0 32px 100px -32px rgba(0, 0, 0, 0.58);
   --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+@layer components {
+  /* Jaśniejszy odcień logo (favicon.png) — delikatne rozjaśnienie + lekka saturacja */
+  .logo-mark {
+    filter: brightness(1.22) saturate(1.12);
+  }
+
+  .dark .logo-mark {
+    filter: brightness(1.18) saturate(1.1);
+  }
 }
 
 @layer base {

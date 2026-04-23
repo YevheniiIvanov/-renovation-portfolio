@@ -31,7 +31,7 @@ export function Services() {
             return (
               <FadeIn key={s.id} delay={i * 0.06}>
                 <article className="group relative flex h-full flex-col rounded-2xl border border-ink/8 bg-surface p-8 shadow-card transition duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-soft dark:border-white/8 dark:bg-ink/40">
-                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-ink/10 bg-ink/[0.03] text-accent transition group-hover:border-accent/40 dark:border-white/10 dark:bg-white/5">
+                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-ink/10 bg-ink/[0.03] text-accent-deep transition group-hover:border-accent/40 dark:border-white/10 dark:bg-white/5 dark:text-accent">
                     <Icon className="h-6 w-6" strokeWidth={1.5} aria-hidden />
                   </div>
                   <h3 className="font-display text-xl font-medium tracking-tight text-ink">
@@ -40,7 +40,7 @@ export function Services() {
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
                     {s.description}
                   </p>
-                  <span className="mt-6 inline-flex text-xs font-semibold uppercase tracking-widest text-accent opacity-0 transition group-hover:opacity-100">
+                  <span className="mt-6 inline-flex text-xs font-semibold uppercase tracking-widest text-accent-deep opacity-0 transition group-hover:opacity-100 dark:text-accent">
                     Więcej →
                   </span>
                 </article>

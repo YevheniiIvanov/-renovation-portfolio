@@ -72,7 +72,7 @@ export function Lightbox({ item, onClose }: LightboxProps) {
                 />
               </div>
               <div className="flex flex-col justify-center p-8 md:p-12">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-deep dark:text-accent">
                   {item.category}
                 </p>
                 <h2

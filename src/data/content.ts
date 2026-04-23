@@ -76,11 +76,11 @@ export const portfolioItems: PortfolioItem[] = [
     category: 'Łazienka',
     caption: 'Ciepły kamień, szczotkowany mosiądz i ukryta zabudowa.',
     beforeSrc:
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf16?w=1400&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1400&q=85&auto=format&fit=crop',
     afterSrc:
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1400&q=85&auto=format&fit=crop',
     highlightSrc:
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1600&q=85&auto=format&fit=crop',
   },
   {
     id: 'p2',
@@ -88,11 +88,11 @@ export const portfolioItems: PortfolioItem[] = [
     category: 'Łazienka',
     caption: 'Odpływ liniowy, szkło bezramowe, stonowana kolorystyka.',
     beforeSrc:
-      'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1400&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1560185007-c5ca9d6c9186?w=1400&q=85&auto=format&fit=crop',
     afterSrc:
-      'https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1400&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=85&auto=format&fit=crop',
     highlightSrc:
-      'https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1600&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=85&auto=format&fit=crop',
   },
   {
     id: 'p3',
@@ -114,9 +114,9 @@ export const portfolioItems: PortfolioItem[] = [
     beforeSrc:
       'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1400&q=85&auto=format&fit=crop',
     afterSrc:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1400&q=85&auto=format&fit=crop',
     highlightSrc:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1600&q=85&auto=format&fit=crop',
   },
   {
     id: 'p5',

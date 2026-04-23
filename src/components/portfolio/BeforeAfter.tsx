@@ -26,7 +26,7 @@ export function BeforeAfter({
   const [isDragging, setIsDragging] = useState(false)
   const [beforeLoaded, setBeforeLoaded] = useState(false)
   const [afterLoaded, setAfterLoaded] = useState(false)
-  const loaded = beforeLoaded && afterLoaded
+  const baseReady = afterLoaded
 
   const onMove = useCallback(
     (clientX: number, rect: DOMRect) => {
@@ -73,7 +73,7 @@ export function BeforeAfter({
     <div
       className={`group relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-ink/5 shadow-card ${className}`}
     >
-      {!loaded ? (
+      {!baseReady ? (
         <ImageSkeleton className="absolute inset-0 rounded-2xl" />
       ) : null}
       {/* After — full background */}
@@ -82,7 +82,7 @@ export function BeforeAfter({
         alt=""
         loading="lazy"
         decoding="async"
-        className={`absolute inset-0 h-full w-full object-cover transition duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute inset-0 h-full w-full object-cover transition duration-500 ${afterLoaded ? 'opacity-100' : 'opacity-0'}`}
         onLoad={() => setAfterLoaded(true)}
       />
       {/* Before — clipped */}
@@ -95,7 +95,7 @@ export function BeforeAfter({
           alt=""
           loading="lazy"
           decoding="async"
-          className={`absolute inset-0 h-full w-full object-cover transition duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 h-full w-full object-cover transition duration-500 ${beforeLoaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setBeforeLoaded(true)}
         />
       </div>

@@ -97,7 +97,7 @@ export function Contact() {
                     <img
                       src={`${import.meta.env.BASE_URL}favicon.png`}
                       alt=""
-                      className="h-20 w-20 object-contain sm:h-24 sm:w-24"
+                      className="logo-mark h-20 w-20 object-contain sm:h-24 sm:w-24"
                       width={96}
                       height={96}
                       onError={(e) => {
@@ -109,7 +109,7 @@ export function Contact() {
                     />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-deep dark:text-accent">
                       {site.serviceLine}
                     </p>
                     <p className="mt-1 font-display text-xl font-medium tracking-tight text-ink md:text-2xl">
@@ -118,7 +118,7 @@ export function Contact() {
                     <p className="mt-0.5 text-sm text-ink-muted">{site.owner}</p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       <span className="inline-flex items-center gap-1.5 rounded-lg border border-ink/10 bg-surface/80 px-2.5 py-1 font-mono text-[11px] text-ink-muted dark:border-white/10 dark:bg-ink/30">
-                        <Building2 className="h-3 w-3 text-accent" aria-hidden />
+                        <Building2 className="h-3 w-3 text-accent-deep dark:text-accent" aria-hidden />
                         NIP {site.nip}
                       </span>
                       <span className="inline-flex items-center gap-1.5 rounded-lg border border-ink/10 bg-surface/80 px-2.5 py-1 font-mono text-[11px] text-ink-muted dark:border-white/10 dark:bg-ink/30">
@@ -258,7 +258,7 @@ export function Contact() {
                       zapytanie.                       Zapoznałem(-am) się z{' '}
                       <button
                         type="button"
-                        className="cursor-pointer border-0 bg-transparent p-0 font-medium text-accent underline decoration-accent/60 underline-offset-2"
+                        className="cursor-pointer border-0 bg-transparent p-0 font-medium text-accent-deep underline decoration-accent/60 underline-offset-2 dark:text-accent"
                         onClick={(e) => {
                           e.preventDefault()
                           e.stopPropagation()
@@ -297,7 +297,7 @@ export function Contact() {
                     role={status === 'ok' ? 'status' : 'alert'}
                     className={
                       status === 'ok'
-                        ? 'text-sm text-accent'
+                        ? 'text-sm text-accent-deep dark:text-accent'
                         : 'text-sm text-red-600 dark:text-red-400'
                     }
                   >

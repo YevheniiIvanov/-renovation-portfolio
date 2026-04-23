@@ -41,7 +41,7 @@ export function Portfolio() {
                 />
                 <div className="flex items-start justify-between gap-4 p-6 md:p-7">
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-accent-deep dark:text-accent">
                       {item.category}
                     </p>
                     <h3 className="mt-2 font-display text-xl font-medium text-ink md:text-2xl">

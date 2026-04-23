@@ -20,7 +20,7 @@ export function SectionHeading({
   return (
     <FadeIn className={`mb-14 md:mb-20 max-w-3xl ${alignClass}`}>
       {eyebrow ? (
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-accent-deep dark:text-accent">
           {eyebrow}
         </p>
       ) : null}

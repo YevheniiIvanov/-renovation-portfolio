@@ -30,7 +30,7 @@ export function Footer() {
               <img
                 src={`${import.meta.env.BASE_URL}favicon.png`}
                 alt=""
-                className="mx-auto h-28 w-28 object-contain md:h-32 md:w-32"
+                className="logo-mark mx-auto h-28 w-28 object-contain md:h-32 md:w-32"
                 width={128}
                 height={128}
                 onError={(e) => {
