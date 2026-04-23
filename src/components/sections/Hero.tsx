@@ -79,7 +79,7 @@ export function Hero() {
           >
             <Button
               variant="primary"
-              className="border border-white/45 bg-accent text-ink shadow-sm hover:bg-accent-hover dark:border-white/50 dark:bg-accent dark:text-ink"
+              className="border border-white/45 bg-accent text-white shadow-sm hover:bg-accent-hover dark:border-white/50 dark:bg-accent dark:text-white"
               onClick={() =>
                 document
                   .getElementById('contact')

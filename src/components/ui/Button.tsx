@@ -11,7 +11,7 @@ type ButtonProps = Omit<HTMLMotionProps<'button'>, 'children'> & {
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-ink text-surface shadow-soft hover:bg-ink/90 dark:bg-accent dark:text-accent-foreground dark:hover:bg-accent-hover',
+    'bg-accent text-accent-foreground shadow-soft hover:bg-accent-hover',
   ghost:
     'bg-transparent text-ink hover:bg-ink/5 dark:hover:bg-white/5',
   outline:
