@@ -35,7 +35,7 @@ export function Hero() {
           className="h-full w-full object-cover"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25 dark:from-black dark:via-black/60"
+          className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent dark:from-black/80 dark:via-black/20 dark:to-transparent"
           aria-hidden
         />
       </motion.div>
