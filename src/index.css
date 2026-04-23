@@ -6,32 +6,34 @@
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;
 
-  --color-surface: #f7f5f0;
-  --color-surface-elevated: #ffffff;
-  --color-ink: #14120f;
-  --color-ink-muted: #5c5850;
-  --color-accent: #b8956a;
-  --color-accent-hover: #a38258;
-  --color-accent-foreground: #14120f;
-  --color-border: rgba(20, 18, 15, 0.08);
-  --color-glass: rgba(255, 255, 255, 0.72);
+  /* Jasny motyw — paleta jak na wizytówce: granat logo, tekst „grafit”, biel / lekki szary */
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f2f4f7;
+  --color-ink: #1a3050;
+  --color-ink-muted: #525860;
+  --color-accent: #254a73;
+  --color-accent-hover: #315a89;
+  --color-accent-foreground: #ffffff;
+  --color-border: rgba(26, 48, 80, 0.1);
+  --color-glass: rgba(255, 255, 255, 0.88);
 
-  --shadow-soft: 0 24px 80px -24px rgba(20, 18, 15, 0.18);
-  --shadow-card: 0 4px 24px rgba(20, 18, 15, 0.06);
+  --shadow-soft: 0 24px 80px -24px rgba(26, 48, 80, 0.14);
+  --shadow-card: 0 4px 24px rgba(26, 48, 80, 0.07);
 }
 
 .dark {
-  --color-surface: #0c0c0e;
-  --color-surface-elevated: #141416;
-  --color-ink: #f4f1ea;
-  --color-ink-muted: #a8a29a;
-  --color-accent: #d4b896;
-  --color-accent-hover: #e2c9a8;
-  --color-accent-foreground: #14120f;
-  --color-border: rgba(244, 241, 234, 0.08);
-  --color-glass: rgba(12, 12, 14, 0.75);
-  --shadow-soft: 0 32px 100px -32px rgba(0, 0, 0, 0.65);
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
+  /* Ciemny motyw — ten sam charakter (granat / stal), do „nowoczesnej” ciemnej strony */
+  --color-surface: #0c1118;
+  --color-surface-elevated: #141c28;
+  --color-ink: #eef2f7;
+  --color-ink-muted: #98a4b4;
+  --color-accent: #9ebadd;
+  --color-accent-hover: #b6cbf0;
+  --color-accent-foreground: #101820;
+  --color-border: rgba(238, 242, 247, 0.08);
+  --color-glass: rgba(12, 17, 24, 0.82);
+  --shadow-soft: 0 32px 100px -32px rgba(0, 0, 0, 0.55);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.38);
 }
 
 @layer base {

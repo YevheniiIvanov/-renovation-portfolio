@@ -16,7 +16,7 @@ export function Footer() {
 
   return (
     <footer
-      className="relative overflow-hidden border-t border-white/10 bg-ink text-white dark:bg-[#060608]"
+      className="relative overflow-hidden border-t border-white/10 bg-ink text-white dark:bg-surface"
       role="contentinfo"
     >
       <div
