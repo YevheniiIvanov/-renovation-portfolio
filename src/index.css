@@ -14,6 +14,9 @@
   --color-accent: #4b00e2;
   --color-accent-hover: #5c12f5;
   --color-accent-foreground: #ffffff;
+  /* Granat „z lewej” — stały na przyciski primary w obu motywach */
+  --color-navy: #0a192f;
+  --color-navy-hover: #132f4d;
   --color-border: rgba(10, 25, 47, 0.1);
   --color-glass: rgba(255, 255, 255, 0.9);
 
